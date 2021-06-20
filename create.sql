@@ -23,3 +23,4 @@ CREATE TABLE book_subjects
     book          text      references books(id)    
     subject       text      references subjects(id)
   );
+  
