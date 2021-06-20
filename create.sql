@@ -1,26 +1,5 @@
-`CREATE TABLE publisher
-  (
-    id         integer    PRIMARY KEY   
-    name       text       NOT NULL
-    country    text       NOT NULL
-  );
-  
-  CREATE TABLE book
-  (
-    id           integer    PRIMARY KEY   
-    title        text       NOT NULL
-    publisher    text       references publisher(id)
-  );
-  
-  CREATE TABLE subjects
-  (
-    id         integer    PRIMARY KEY   
-    name       text       NOT NULL
-  );
-
-CREATE TABLE book_subjects
-  (
-    book          text      references books(id)    
-    subject       text      references subjects(id)
-  );
-  
+create table publisher(id PRIMARY KEY,name text,country text);
+ PRAGMA foreign_keys=ON;
+create table books(id PRIMARY KEY,title text,publisher, FOREIGN KEY(publisher) REFERENCES publisher(id));
+create table subjects(id PRIMARY KEY,name text);
+create table books_subjects(book,subject,FOREIGN KEY(book)  REFERENCES books(id),FOREIGN KEY(subject)  REFERENCES subjects(id));
