@@ -1,3 +1,1 @@
-SELECT title
-FROM books
-WHERE publiher='PHI' ;
+select title from books where publisher==101;
